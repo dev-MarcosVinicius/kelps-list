@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, Text } from 'react-native';
 
 import { ItemWrapper } from './ItemWrapper';
 import { TaskItem } from './TaskItem';
@@ -27,6 +27,15 @@ export function TasksList({ tasks, removeTask, editTask }: TasksListProps) {
       keyExtractor={item => String(item.id)}
       contentContainerStyle={{ paddingBottom: 24 }}
       showsVerticalScrollIndicator={false}
+      ListEmptyComponent={() => (
+        <Text style={{
+          fontSize: 16,
+          fontWeight: 'bold',
+          color: '#0583F2',
+          alignSelf: 'center',
+          marginTop: 30
+        }}>Nenhum item na sua lista 🙁</Text> 
+      )}
       renderItem={({ item, index }) => {
         return (
           <ItemWrapper index={index}>
