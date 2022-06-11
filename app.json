@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "kelps-list-app",
+    "slug": "kelps-list-app",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
