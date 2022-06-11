@@ -7,6 +7,7 @@ import {
   Text,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
+import { TextInputMask } from 'react-native-masked-text'
 
 import ModalView from './../components/ModalView'
 
@@ -34,7 +35,7 @@ export function AddTodo({ addTask }: AddTodoProps) {
       task.count.trim() != '' &&
       task.price.trim() != ''
     ) {
-      addTask(task);
+      addTask({...task, price: task.price.replace('R$', "")});
       setTask({
         title: '',
         count: '',
@@ -76,10 +77,10 @@ export function AddTodo({ addTask }: AddTodoProps) {
                   Quantidade
                 </Text>
 
-                <TextInput 
+                <TextInputMask
+                  type={'only-numbers'} 
                   style={styles.halfInput} 
                   placeholder="2"
-                  keyboardType={'numeric'}
                   placeholderTextColor="#B2B2B2"
                   returnKeyType="done"
                   maxLength={3}
@@ -94,15 +95,14 @@ export function AddTodo({ addTask }: AddTodoProps) {
                   Valor
                 </Text>
 
-                <TextInput 
+                <TextInputMask
+                  type={'money'} 
                   style={styles.halfInput} 
-                  placeholder="8,00"
-                  keyboardType={'decimal-pad'}
                   placeholderTextColor="#B2B2B2"
                   returnKeyType="done"
-                  maxLength={9}
+                  maxLength={8}
                   selectionColor="#0583F2"
-                  value={task.price}
+                  value={task.price || '0'}
                   onChangeText={(price) => setTask({...task, price})}
                 />
               </View>

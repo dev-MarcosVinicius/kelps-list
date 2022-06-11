@@ -16,6 +16,8 @@ export function Home() {
     if (tasks.find(item => item.title == task.title)) return Alert.alert("Task já cadastrada",
       "Você não pode cadastrar uma task com o mesmo nome");
 
+    console.log('Aquii ', task.price)
+
     const data = {
       id: new Date().getTime(),
       title: task.title,
