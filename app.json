@@ -1,10 +1,19 @@
 {
   "expo": {
-    "name": "kelps-list-app",
+    "name": "Kelps.List App",
     "slug": "kelps-list-app",
     "version": "1.0.0",
+    "icon": "./assets/app-logo.png",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "ios": {
+      "bundleIdentifier": "com.markvv.kelps-list-app",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.markvv.kelps-list-app",
+      "versionCode": 1
+    }
   }
 }
