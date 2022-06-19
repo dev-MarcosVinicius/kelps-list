@@ -13,7 +13,7 @@
     },
     "android": {
       "package": "com.markvv.kelps-list-app",
-      "versionCode": 1
+      "versionCode": 1.1
     }
   }
 }
